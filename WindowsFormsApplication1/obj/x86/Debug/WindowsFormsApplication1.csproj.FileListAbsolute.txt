@@ -1,0 +1,9 @@
+C:\Users\Adil\Downloads\Acces aux données exemple simple\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csprojAssemblyReference.cache
+C:\Users\Adil\Downloads\Acces aux données exemple simple\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Adil\Downloads\Acces aux données exemple simple\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Adil\Downloads\Acces aux données exemple simple\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.GenerateResource.cache
+C:\Users\Adil\Downloads\Acces aux données exemple simple\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.csproj.CoreCompileInputs.cache
+C:\Users\Adil\Downloads\Acces aux données exemple simple\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\Adil\Downloads\Acces aux données exemple simple\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\Adil\Downloads\Acces aux données exemple simple\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Adil\Downloads\Acces aux données exemple simple\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
