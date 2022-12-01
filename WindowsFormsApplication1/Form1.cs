@@ -11,51 +11,68 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-        public static List<Etudiant> etudiants = new List<Etudiant>();
+        public static list<Etudiant> etudiants = new list<Etudiant>();
         int IdSelected ;
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            LoadInitial();
             
         }
 
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            cnx.Open();
-            cmd.Connection = cnx;
-            cmd.CommandText = "insert into Dossier(ID_DOSSIER, NOM_DOSSIER) values('" + NomTxt.Text + "','" + PrenomTxt.Text + "') ";
-            cmd.ExecuteNonQuery();
-            cnx.Close();
+            LoadInsert();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            cnx.Open();
-            cmd.Connection = cnx;
-            cmd.CommandText = "update Dossier set NOM_DOSSIER='" + PrenomTxt.Text + "' where ID_DOSSIER='" + NomTxt.Text + "' ";
-            cmd.ExecuteNonQuery();
-            cnx.Close();
+            LoadUpdate();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            cnx.Open();
-            cmd.Connection = cnx;
-            cmd.CommandText = "delete from DOSSIER where ID_DOSSIER='" + NomTxt.Text + "' ";
-            cmd.ExecuteNonQuery();
-            cnx.Close();
+            etudiants.remove(etudiants.find(x => x.id == IdSelected));
+            ModelDB.deleteEtudiant(IdSelected);
+            LoadInitial();
+            
         }
 
 
         private void Cancel_Click(object sender, EventArgs e)
         {
+            LoadInitial();
 
         }
 
         private void Confirm_Click(object sender, EventArgs e)
         {
+            if (txtNom.Text == "" || txtPrenom.Text == "")
+            {
+                MessageBox.Show("Veuillez remplir tous les champs");
+            }
+            else
+            {
+                if (titleLabel.Text == "Insertion")
+                {
+                    Etudiant etudiant = new Etudiant(txtNom.Text, txtPrenom.Text);
+                    etudiants.add(etudiant);
+                    ModelDB.addEtudiant(txtNom.Text, txtPrenom.Text);
+                    LoadInitial();
+                }
+                else if(titleLabel.Text == "Modification")
+                {
+                    etudiants.find(x => x.id == IdSelected).setnom(txtNom.Text);
+                    etudiants.find(x => x.id == IdSelected).setprenom(txtPrenom.Text);
+                    LoadInitial();
+                }
+                
+                else{
+                    MessageBox.Show("Erreur!! Unknown window");
+                }
+            }
 
         }
         private void LoadInitial()
@@ -68,7 +85,7 @@ namespace WindowsFormsApplication1
             Cancel.Enabled = false;
             btnInsert.Enabled = true;
             comboBox1.Enabled = true;
-            
+            Fill();
             titleLabel.Text = "Initiale";
 
         }
@@ -81,7 +98,6 @@ namespace WindowsFormsApplication1
             Confirm.Enabled = true;
             Cancel.Enabled = true;
             btnInsert.Enabled = false;
-            Fill();
             comboBox1.Enabled = false;
             titleLabel.Text = "Insertion";
         }
@@ -111,6 +127,8 @@ namespace WindowsFormsApplication1
             NomTxt.Text = comboBox1.Text.Split(' ')[0];
             PrenomTxt.Text = comboBox1.Text.Split(' ')[1];
             IdSelected = Etudiant.getIdByName(NomTxt.Text, PrenomTxt.Text);
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
      
 
         }
