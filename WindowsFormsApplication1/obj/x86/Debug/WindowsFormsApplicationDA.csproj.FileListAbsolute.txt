@@ -1,0 +1,2 @@
+C:\Users\WadiePC\Desktop\coding\ExamenForm\ExDb\forml\ExDb\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\WadiePC\Desktop\coding\ExamenForm\ExDb\forml\ExDb\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
