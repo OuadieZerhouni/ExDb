@@ -11,7 +11,8 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-        public static list<Etudiant> etudiants = new list<Etudiant>();
+        //list of etudiants
+        List<Etudiant> etudiants = new List<Etudiant>();
         int IdSelected ;
 
 
