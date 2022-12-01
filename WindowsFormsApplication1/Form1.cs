@@ -11,7 +11,6 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-        //list of etudiants
         public static List<Etudiant> etudiants = new List<Etudiant>();
         int IdSelected ;
 
@@ -59,7 +58,6 @@ namespace WindowsFormsApplication1
         {
 
         }
-        //LoadInitial disable all exept combobox1 and insert button
         private void LoadInitial()
         {
             NomTxt.Enabled = false;
@@ -74,7 +72,6 @@ namespace WindowsFormsApplication1
             titleLabel.Text = "Initiale";
 
         }
-        //LoadInsert enable all exept combobox1 and insert ,update delete button
         private void LoadInsert()
         {
             NomTxt.Enabled = true;
@@ -84,10 +81,10 @@ namespace WindowsFormsApplication1
             Confirm.Enabled = true;
             Cancel.Enabled = true;
             btnInsert.Enabled = false;
+            Fill();
             comboBox1.Enabled = false;
             titleLabel.Text = "Insertion";
         }
-        //LoadUpdate enable all exept combobox1 and insert ,update delete button
         private void LoadUpdate()
         {
             NomTxt.Enabled = true;
@@ -99,22 +96,7 @@ namespace WindowsFormsApplication1
             btnInsert.Enabled = false;
             comboBox1.Enabled = false;
             titleLabel.Text = "Modification";
-        }
-        //LoadSelected show info of selected etudiantin combo box1
-        private void LoadSelected()
-        {
-            NomTxt.Enabled = true;
-            Nom
-            PrenomTxt.Enabled = true;
-            btnUpdate.Enabled = true;
-            btnDelete.Enabled = true;
-            Confirm.Enabled = false;
-            Cancel.Enabled = false;
-            btnInsert.Enabled = true;
-            comboBox1.Enabled = true;
-            titleLabel.Text = "Selection";
-        }
-        //Fill() fill the combobox1 with etudiants
+        }      
         private void Fill()
         {
             comboBox1.Items.Clear();
@@ -126,6 +108,10 @@ namespace WindowsFormsApplication1
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            NomTxt.Text = comboBox1.Text.Split(' ')[0];
+            PrenomTxt.Text = comboBox1.Text.Split(' ')[1];
+            IdSelected = Etudiant.getIdByName(NomTxt.Text, PrenomTxt.Text);
+     
 
         }
     }
