@@ -11,8 +11,8 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-        //list of etudiants
-        List<Etudiant> etudiants = new List<Etudiant>();
+        //array of etudiants
+        Etudiant[] etudiants = new Etudiant[100];
         int IdSelected ;
 
 
