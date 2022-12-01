@@ -69,6 +69,8 @@ namespace WindowsFormsApplication1
             Cancel.Enabled = false;
             btnInsert.Enabled = true;
             comboBox1.Enabled = true;
+            titleLabel.Text = "Initiale";
+
         }
     }
 }
