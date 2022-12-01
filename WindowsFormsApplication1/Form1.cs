@@ -53,7 +53,7 @@ namespace WindowsFormsApplication1
         {
             cnx.Open();
             cmd.Connection = cnx;
-            cmd.CommandText = "insert into Dossier(ID_DOSSIER, NOM_DOSSIER) values('" + txtId_dossier.Text + "','" + txtNom_dossier.Text + "') ";
+            cmd.CommandText = "insert into Dossier(ID_DOSSIER, NOM_DOSSIER) values('" + NomTxt.Text + "','" + PrenomTxt.Text + "') ";
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
@@ -62,7 +62,7 @@ namespace WindowsFormsApplication1
         {
             cnx.Open();
             cmd.Connection = cnx;
-            cmd.CommandText = "update Dossier set NOM_DOSSIER='" + txtNom_dossier.Text + "' where ID_DOSSIER='" + txtId_dossier.Text + "' ";
+            cmd.CommandText = "update Dossier set NOM_DOSSIER='" + PrenomTxt.Text + "' where ID_DOSSIER='" + NomTxt.Text + "' ";
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
@@ -71,7 +71,7 @@ namespace WindowsFormsApplication1
         {
             cnx.Open();
             cmd.Connection = cnx;
-            cmd.CommandText = "delete from DOSSIER where ID_DOSSIER='" + txtId_dossier.Text + "' ";
+            cmd.CommandText = "delete from DOSSIER where ID_DOSSIER='" + NomTxt.Text + "' ";
             cmd.ExecuteNonQuery();
             cnx.Close();
         }
@@ -85,6 +85,16 @@ namespace WindowsFormsApplication1
             adapter.Fill(dt);
             dataGridView1.DataSource = dt;
             cnx.Close();
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Confirm_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

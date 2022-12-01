@@ -28,27 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.txtId_dossier = new System.Windows.Forms.TextBox();
-            this.txtNom_dossier = new System.Windows.Forms.TextBox();
+            this.NomTxt = new System.Windows.Forms.TextBox();
+            this.PrenomTxt = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Cancel = new System.Windows.Forms.Button();
+            this.Confirm = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(377, 150);
-            this.dataGridView1.TabIndex = 0;
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(39, 332);
+            this.btnInsert.Location = new System.Drawing.Point(41, 204);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(75, 23);
             this.btnInsert.TabIndex = 1;
@@ -56,23 +51,23 @@
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // txtId_dossier
+            // NomTxt
             // 
-            this.txtId_dossier.Location = new System.Drawing.Point(49, 217);
-            this.txtId_dossier.Name = "txtId_dossier";
-            this.txtId_dossier.Size = new System.Drawing.Size(100, 20);
-            this.txtId_dossier.TabIndex = 2;
+            this.NomTxt.Location = new System.Drawing.Point(76, 74);
+            this.NomTxt.Name = "NomTxt";
+            this.NomTxt.Size = new System.Drawing.Size(184, 20);
+            this.NomTxt.TabIndex = 2;
             // 
-            // txtNom_dossier
+            // PrenomTxt
             // 
-            this.txtNom_dossier.Location = new System.Drawing.Point(49, 243);
-            this.txtNom_dossier.Name = "txtNom_dossier";
-            this.txtNom_dossier.Size = new System.Drawing.Size(100, 20);
-            this.txtNom_dossier.TabIndex = 3;
+            this.PrenomTxt.Location = new System.Drawing.Point(76, 100);
+            this.PrenomTxt.Name = "PrenomTxt";
+            this.PrenomTxt.Size = new System.Drawing.Size(184, 20);
+            this.PrenomTxt.TabIndex = 3;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(120, 332);
+            this.btnUpdate.Location = new System.Drawing.Point(122, 204);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 5;
@@ -82,7 +77,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(201, 332);
+            this.btnDelete.Location = new System.Drawing.Point(203, 204);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 6;
@@ -90,46 +85,97 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button4
+            // Cancel
             // 
-            this.button4.Location = new System.Drawing.Point(419, 33);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "select";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.btnSelect_Click);
+            this.Cancel.Location = new System.Drawing.Point(41, 233);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(109, 23);
+            this.Cancel.TabIndex = 7;
+            this.Cancel.Text = "Cancel";
+            this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            // 
+            // Confirm
+            // 
+            this.Confirm.Location = new System.Drawing.Point(156, 233);
+            this.Confirm.Name = "Confirm";
+            this.Confirm.Size = new System.Drawing.Size(122, 23);
+            this.Confirm.TabIndex = 8;
+            this.Confirm.Text = "Confirm";
+            this.Confirm.UseVisualStyleBackColor = true;
+            this.Confirm.Click += new System.EventHandler(this.Confirm_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(76, 46);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(183, 21);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(25, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "label3";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 380);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(311, 295);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Confirm);
+            this.Controls.Add(this.Cancel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.txtNom_dossier);
-            this.Controls.Add(this.txtId_dossier);
+            this.Controls.Add(this.PrenomTxt);
+            this.Controls.Add(this.NomTxt);
             this.Controls.Add(this.btnInsert);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.TextBox txtId_dossier;
-        private System.Windows.Forms.TextBox txtNom_dossier;
+        private System.Windows.Forms.TextBox NomTxt;
+        private System.Windows.Forms.TextBox PrenomTxt;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.Button Confirm;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
